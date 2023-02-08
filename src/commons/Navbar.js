@@ -39,6 +39,11 @@ function Navbar() {
             </Link>
           </li>
           <li className="list-item">
+            <Link to="/role" className="link-light">
+              Role
+            </Link>
+          </li>
+          <li className="list-item">
             <Link to="/about" className="link-light">
               About
             </Link>
