@@ -6,6 +6,7 @@ import Role from "./pages/Role"
 import Admin from "./pages/Admin"
 import Review from "./pages/Review"
 import PaymentCategory from "./pages/PaymentCategory"
+import Product from "./pages/Product"
 import ProductCategory from "./pages/ProductCategory"
 import Home from "./pages/Home"
 import About from "./pages/About"
@@ -24,6 +25,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/shopCategory" element={<ShopCategory />} />
+          <Route path="/product" element={<Product />} />
           <Route path="/productCategory" element={<ProductCategory />} />
           <Route path="/role" element={<Role />} />
           <Route path="/admin" element={<Admin />} />
