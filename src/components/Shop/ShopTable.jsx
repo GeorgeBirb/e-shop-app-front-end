@@ -7,7 +7,6 @@ import toast from "react-hot-toast";
 import Select from 'react-select';
 
 function ShopDataDisplay() {
-    // State variables to keep track of shop data and selected options
     const [ShopCategories, setShopCategories] = useState([]);
     const [selectedShopCategory, setSelectedShopCategory] = useState("");
     const [Sellers, setSellers] = useState([]);
@@ -17,7 +16,7 @@ function ShopDataDisplay() {
     const [deleted, setDeleted] = useState(false);
     const [updated, setUpdated] = useState(false);
     const [open, setOpen] = useState(false);
-    // Options for the confirmation dialog
+
     const options = {
         labels: {
             confirmable: "Confirm",
@@ -25,40 +24,33 @@ function ShopDataDisplay() {
         }
     }
 
-    // Helper function to toggle the modal window open/close state
     function handleOpen() {
         setOpen(!open);
     }
 
-    // Handler for when a shop category is selected from the dropdown
     const handleChangeShopCategory = (selectedShopCategory) => {
         setSelectedShopCategory(selectedShopCategory);
     };
 
-    // Handler for when a seller is selected from the dropdown
     const handleChangeSeller = (selectedSeller) => {
         setSelectedSeller(selectedSeller);
     };
 
-    // Async function to retrieve the list of shops from the API
     const retrieveShops = async () => {
         const response = await api.get("/shop");
         return response.data;
     }
 
-    // Async function to retrieve the list of shop categories from the API
     const retrieveShopCategories = async () => {
         const response = await api.get("/shopCategory");
         return response.data;
     }
 
-    // Async function to retrieve the list of sellers from the API
     const retrieveSellers = async () => {
         const response = await api.get("/eshopUser");
         return response.data;
     }
 
-    // Async function to add a shop to the database, after confirmation
     async function addShopHandler(shop) {
         try {
             handleOpen();
@@ -75,7 +67,6 @@ function ShopDataDisplay() {
         }
     };
 
-    // Async function to remove a shop from the database, after confirmation
     const removeShopHandler = async (id) => {
         try {
             const result = await confirm("Are you sure?", options);

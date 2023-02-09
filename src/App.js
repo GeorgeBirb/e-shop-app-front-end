@@ -4,6 +4,7 @@ import Shop from "./pages/Shop"
 import ShopCategory from "./pages/ShopCategory"
 import Role from "./pages/Role"
 import Admin from "./pages/Admin"
+import Review from "./pages/Review"
 import PaymentCategory from "./pages/PaymentCategory"
 import ProductCategory from "./pages/ProductCategory"
 import Home from "./pages/Home"
@@ -26,6 +27,7 @@ function App() {
           <Route path="/productCategory" element={<ProductCategory />} />
           <Route path="/role" element={<Role />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/review" element={<Review />} />
           <Route path="/paymentCategory" element={<PaymentCategory />} />
         </Routes>
     </div>

@@ -54,6 +54,11 @@ function Navbar() {
             </Link>
           </li>
           <li className="list-item">
+            <Link to="/review" className="link-light">
+              | Reviews |
+            </Link>
+          </li>
+          <li className="list-item">
             <Link to="/paymentCategory" className="link-light">
               | Payment Categories |
             </Link>
