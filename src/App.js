@@ -3,6 +3,8 @@ import { Routes, Route } from "react-router-dom"
 import Shop from "./pages/Shop"
 import ShopCategory from "./pages/ShopCategory"
 import Role from "./pages/Role"
+import PaymentCategory from "./pages/PaymentCategory"
+import ProductCategory from "./pages/ProductCategory"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Location from "./pages/Location"
@@ -20,7 +22,9 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/shopCategory" element={<ShopCategory />} />
+          <Route path="/productCategory" element={<ProductCategory />} />
           <Route path="/role" element={<Role />} />
+          <Route path="/paymentCategory" element={<PaymentCategory />} />
         </Routes>
     </div>
   );
