@@ -30,27 +30,32 @@ function Navbar() {
           </li>
           <li className="list-item">
             <Link to="/shop" className="link-light">
-              Shops
+              | Shops |
             </Link>
           </li>
           <li className="list-item">
             <Link to="/shopCategory" className="link-light">
-              ShopCategory
+              | Shop Categories |
             </Link>
           </li>
           <li className="list-item">
             <Link to="/productCategory" className="link-light">
-              ProductCategory
+              | Product Categories |
             </Link>
           </li>
           <li className="list-item">
             <Link to="/role" className="link-light">
-              Role
+              | Roles |
+            </Link>
+          </li>
+          <li className="list-item">
+            <Link to="/admin" className="link-light">
+              | Admins |
             </Link>
           </li>
           <li className="list-item">
             <Link to="/paymentCategory" className="link-light">
-              Payment Category
+              | Payment Categories |
             </Link>
           </li>
           <li className="list-item">
