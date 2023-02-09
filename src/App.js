@@ -5,6 +5,7 @@ import ShopCategory from "./pages/ShopCategory"
 import Role from "./pages/Role"
 import Admin from "./pages/Admin"
 import Review from "./pages/Review"
+import Payment from "./pages/Payment"
 import PaymentCategory from "./pages/PaymentCategory"
 import Product from "./pages/Product"
 import ProductCategory from "./pages/ProductCategory"
@@ -30,6 +31,7 @@ function App() {
           <Route path="/role" element={<Role />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/review" element={<Review />} />
+          <Route path="/payment" element={<Payment />} />
           <Route path="/paymentCategory" element={<PaymentCategory />} />
         </Routes>
     </div>

@@ -24,53 +24,48 @@ function Navbar() {
       <div>
         <ul className="middle-items">
           <li className="list-item">
-            <Link to="/home" className="link-light">
-              Home
-            </Link>
-          </li>
-          <li className="list-item">
             <Link to="/shop" className="link-light">
-              | Shops |
+              |Shops|
             </Link>
           </li>
           <li className="list-item">
             <Link to="/shopCategory" className="link-light">
-              | Shop Categories |
+              |Shop Categories|
             </Link>
           </li>
           <li className="list-item">
             <Link to="/product" className="link-light">
-              | Product |
+              |Product|
             </Link>
           </li>
           <li className="list-item">
             <Link to="/productCategory" className="link-light">
-              | Product Categories |
+              |Product Categories|
             </Link>
           </li>
           <li className="list-item">
             <Link to="/role" className="link-light">
-              | Roles |
+              |Roles|
             </Link>
           </li>
           <li className="list-item">
             <Link to="/admin" className="link-light">
-              | Admins |
+              |Admins|
             </Link>
           </li>
           <li className="list-item">
             <Link to="/review" className="link-light">
-              | Reviews |
+              |Reviews|
+            </Link>
+          </li>
+          <li className="list-item">
+            <Link to="/payment" className="link-light">
+              |Payment|
             </Link>
           </li>
           <li className="list-item">
             <Link to="/paymentCategory" className="link-light">
-              | Payment Categories |
-            </Link>
-          </li>
-          <li className="list-item">
-            <Link to="/about" className="link-light">
-              About
+              |Payment Categories|
             </Link>
           </li>
         </ul>

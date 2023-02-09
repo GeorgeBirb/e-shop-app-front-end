@@ -1,18 +1,18 @@
-import ShopCategoryDataDisplay from '../components/ShopCategory/ShopCategoryTable'
+import PaymentDataDisplay from '../components/Payment/PaymentTable'
 import BottomBar from "../commons/BottomBar"
 import { Toaster } from "react-hot-toast";
 
-function ShopCategory() {
+function Payment() {
   return (
     <div className="container">
-      <h2>Our Shop Categories!!!</h2>
+      <h2>Our Payments!!!</h2>
       <span><br /><br /></span>
       <Toaster/>
-      <ShopCategoryDataDisplay />
+      <PaymentDataDisplay />
       <div className="nav-bar-container-light">
         <BottomBar />
       </div>
     </div>
   );
 }
-export default ShopCategory;
+export default Payment;
