@@ -54,13 +54,18 @@ function Navbar() {
             </Link>
           </li>
           <li className="list-item">
+            <Link to="/cart" className="link-light">
+              |Carts|
+            </Link>
+          </li>
+          <li className="list-item">
             <Link to="/review" className="link-light">
               |Reviews|
             </Link>
           </li>
           <li className="list-item">
             <Link to="/payment" className="link-light">
-              |Payment|
+              |Payments|
             </Link>
           </li>
           <li className="list-item">
