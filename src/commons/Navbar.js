@@ -36,6 +36,14 @@ function Navbar() {
       label: "Admins"
     },
     {
+      value: "/cart",
+      label: "Carts"
+    },
+    {
+      value: "/cartProduct",
+      label: "Cart & Products"
+    },
+    {
       value: "/review",
       label: "Reviews"
     },

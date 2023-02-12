@@ -9,6 +9,7 @@ import Payment from "./pages/Payment"
 import PaymentCategory from "./pages/PaymentCategory"
 import Product from "./pages/Product"
 import Cart from "./pages/Cart"
+import CartProduct from "./pages/CartProduct"
 import ProductCategory from "./pages/ProductCategory"
 import Home from "./pages/Home"
 import About from "./pages/About"
@@ -32,6 +33,7 @@ function App() {
           <Route path="/role" element={<Role />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/cartProduct" element={<CartProduct />} />
           <Route path="/review" element={<Review />} />
           <Route path="/payment" element={<Payment />} />
           <Route path="/paymentCategory" element={<PaymentCategory />} />
