@@ -28,6 +28,10 @@ function Navbar() {
       label: "Product Categories"
     },
     {
+      value: "/eshopUser",
+      label: "E-shop Users"
+    },
+    {
       value: "/role",
       label: "Roles"
     },

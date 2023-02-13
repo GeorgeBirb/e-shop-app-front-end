@@ -2,6 +2,7 @@ import './App.css'
 import { Routes, Route } from "react-router-dom"
 import Shop from "./pages/Shop"
 import ShopCategory from "./pages/ShopCategory"
+import EshopUser from "./pages/EshopUser"
 import Role from "./pages/Role"
 import Admin from "./pages/Admin"
 import Review from "./pages/Review"
@@ -30,6 +31,7 @@ function App() {
           <Route path="/shopCategory" element={<ShopCategory />} />
           <Route path="/product" element={<Product />} />
           <Route path="/productCategory" element={<ProductCategory />} />
+          <Route path="/eshopUser" element={<EshopUser />} />
           <Route path="/role" element={<Role />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/cart" element={<Cart />} />
