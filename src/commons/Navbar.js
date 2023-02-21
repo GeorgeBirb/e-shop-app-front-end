@@ -1,69 +1,21 @@
-import { useNavigate } from 'react-router-dom'
 import UserService from "../services/UserService";
 import '../App.css'
 import { useEffect, useState } from 'react';
-import Select from 'react-select';
-import Menu from '@mui/icons-material/Menu';
 import ExitToApp from '@mui/icons-material/ExitToApp';
 import Button from '@mui/material/Button';
+import { styled } from '@mui/material/styles';
+import { grey } from '@mui/material/colors';
+
+const LogoutButton = styled(Button)({
+  backgroundColor: grey[900],
+  color: '#fff',
+  '&:hover': {
+    backgroundColor: grey[700],
+  },
+});
 
 function Navbar() {
-  const navigate = useNavigate();
   const [userName, setUserName] = useState('');
-  const options = [
-    {
-      value: "/shop",
-      label: "Shops"
-    },
-    {
-      value: "/shopCategory",
-      label: "Shop Categories"
-    },
-    {
-      value: "/product",
-      label: "Product"
-    },
-    {
-      value: "/productCategory",
-      label: "Product Categories"
-    },
-    {
-      value: "/eshopUser",
-      label: "E-shop Users"
-    },
-    {
-      value: "/role",
-      label: "Roles"
-    },
-    {
-      value: "/admin",
-      label: "Admins"
-    },
-    {
-      value: "/cart",
-      label: "Carts"
-    },
-    {
-      value: "/cartProduct",
-      label: "Cart & Products"
-    },
-    {
-      value: "/orderCart",
-      label: "Order Cart"
-    },
-    {
-      value: "/review",
-      label: "Reviews"
-    },
-    {
-      value: "/payment",
-      label: "Payments"
-    },
-    {
-      value: "/paymentCategory",
-      label: "Payment Categories"
-    }
-  ];
 
   useEffect(() => {
     setUserName(UserService.getUsername());
@@ -73,16 +25,12 @@ function Navbar() {
     console.log('userName', userName);
   }, [userName]);
 
-  const handleChange = (selectedOption) => {
-    navigate(selectedOption.value);
-  }
-
   const handleLogout = () => {
     if (window.confirm('Are you sure you want to logout?')) {
       UserService.doLogout();
     }
   };
-  
+
   return (
 
     <div className="nav-bar-container-light">
@@ -92,18 +40,13 @@ function Navbar() {
       </div>
 
       <div className='alignRight'>
-        <Button
+        <LogoutButton
           variant="contained"
-          title="Logout"
-          style={{ backgroundColor: 'black' }}
           startIcon={<ExitToApp />}
-          onClick={handleLogout}        />
-        <div>
-          <Select
-            placeholder={<Menu />}
-            options={options}
-            onChange={handleChange} />
-        </div>
+          onClick={handleLogout}
+        >
+          Logout
+        </LogoutButton>
       </div>
     </div>
   );

@@ -16,13 +16,13 @@ import ProductCategory from "./pages/ProductCategory"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Location from "./pages/Location"
-import { useEffect, useState } from 'react'
-
+import LeftBar from "./commons/LeftBar"
 
 function App() {
 
   return (
     <div className="App">
+      <LeftBar/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />

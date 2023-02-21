@@ -265,7 +265,7 @@ th {
 h1 {
   font-size: 3rem;
   letter-spacing: 0.9px;
-  background: black;
+  background: white;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -281,9 +281,22 @@ h2 {
   margin-right: 0;
 }
 
-.alignLeft{
-  margin-left: 0; 
-  margin-right: auto;
+.alignLeft {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+.alignLeft h2:first-child {
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.alignLeft h2:last-child {
+  color: black;
+  font-weight: bold;
+  font-size: 24px;
 }
 
 .container {
@@ -312,16 +325,28 @@ h2 {
 
 .nav-bar-container-light {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: 35px;
   background-color: yellow;
-  border-bottom-style: solid;
-  border-bottom-color: black;
-  border-bottom-width: 2px;
-  height: 60px;
+  padding: 10px 30px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+  border-bottom: 1px solid #dee2e6;
+}
+
+.nav-bar-container-light h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #495057;
+}
+
+.nav-bar-container-light .alignLeft h2 {
+  margin-right: 10px;
+}
+
+.nav-bar-container-light .alignRight button:hover {
+  background-color: yellow;
+  border-color: #495057;
 }
 
 .bottom-nav-bar {
@@ -332,12 +357,29 @@ h2 {
   width: 100%;
   position: fixed;
   bottom: 0;
-  padding: 35px;
+  padding: 20px;
   background-color: yellow;
   border-bottom-style: solid;
-  border-bottom-color: black;
+  border-bottom-color: #F8D210;
   border-bottom-width: 2px;
-  height: 60px;
+  height: 70px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.bottom-nav-bar a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+.bottom-nav-bar a:hover {
+  color: #000;
+}
+
+.bottom-nav-bar .active {
+  color: #000;
+  font-weight: bold;
 }
 
 .middle-items {
