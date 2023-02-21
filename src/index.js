@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import UserService from "./services/UserService";
+import LeftBar from './commons/LeftBar';
 
 const Navbar = React.lazy(() => import("./commons/Navbar"));
 

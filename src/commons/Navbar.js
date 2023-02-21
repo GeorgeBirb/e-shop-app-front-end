@@ -16,14 +16,17 @@ const LogoutButton = styled(Button)({
 
 function Navbar() {
   const [userName, setUserName] = useState('');
+  const [role, setRole] = useState('');
 
   useEffect(() => {
     setUserName(UserService.getUsername());
+    setRole(UserService.getRole());
   }, []);
 
   useEffect(() => {
     console.log('userName', userName);
-  }, [userName]);
+    console.log('role', role);
+  }, [userName,role]);
 
   const handleLogout = () => {
     if (window.confirm('Are you sure you want to logout?')) {
@@ -36,7 +39,7 @@ function Navbar() {
     <div className="nav-bar-container-light">
       <div className='alignLeft'>
         <h2>Welcome,</h2>
-        <h2>{userName}!!</h2>
+        <h2>{role} : {userName}!</h2>
       </div>
 
       <div className='alignRight'>

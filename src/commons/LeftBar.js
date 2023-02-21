@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -17,66 +17,174 @@ import AdminIcon from '@mui/icons-material/AccountCircle';
 import CartIcon from '@mui/icons-material/ShoppingCart';
 import PaymentIcon from '@mui/icons-material/Payment';
 import ReviewIcon from '@mui/icons-material/Star';
+import UserService from '../services/UserService';
 import '../App.css';
 
-const menuItems = [  {
-    label: 'Home',
-    icon: <HomeIcon />,
-    path: '/'
-  },
-  {
-    label: 'Shops',
-    icon: <ShopIcon />,
-    path: '/shop'
-  },
-  {
-    label: 'Shop Categories',
-    icon: <CategoryIcon />,
-    path: '/shopCategory'
-  },
-  {
-    label: 'Products',
-    icon: <ShopIcon />,
-    path: '/product'
-  },
-  {
-    label: 'Product Categories',
-    icon: <CategoryIcon />,
-    path: '/productCategory'
-  },
-  {
-    label: 'E-shop Users',
-    icon: <PersonIcon />,
-    path: '/eshopUser'
-  },
-  {
-    label: 'Roles',
-    icon: <RoleIcon />,
-    path: '/role'
-  },
-  {
-    label: 'Admins',
-    icon: <AdminIcon />,
-    path: '/admin'
-  },
-  {
-    label: 'Carts',
-    icon: <CartIcon />,
-    path: '/cart'
-  },
-  {
-    label: 'Payments',
-    icon: <PaymentIcon />,
-    path: '/payment'
-  },
-  {
-    label: 'Reviews',
-    icon: <ReviewIcon />,
-    path: '/review'
-  }
+const menuItemsSuperAdmin = [{
+  label: 'Home',
+  icon: <HomeIcon />,
+  path: '/'
+},
+{
+  label: 'Shops',
+  icon: <ShopIcon />,
+  path: '/shop'
+},
+{
+  label: 'Shop Categories',
+  icon: <CategoryIcon />,
+  path: '/shopCategory'
+},
+{
+  label: 'Products',
+  icon: <ShopIcon />,
+  path: '/product'
+},
+{
+  label: 'Product Categories',
+  icon: <CategoryIcon />,
+  path: '/productCategory'
+},
+{
+  label: 'E-shop Users',
+  icon: <PersonIcon />,
+  path: '/eshopUser'
+},
+{
+  label: 'Roles',
+  icon: <RoleIcon />,
+  path: '/role'
+},
+{
+  label: 'Admins',
+  icon: <AdminIcon />,
+  path: '/admin'
+},
+{
+  label: 'Carts',
+  icon: <CartIcon />,
+  path: '/cart'
+},
+{
+  label: 'Cart Product',
+  icon: <CartIcon />,
+  path: '/cartProduct'
+},
+{
+  label: 'Order',
+  icon: <CartIcon />,
+  path: '/orderCart'
+},
+{
+  label: 'Payments',
+  icon: <PaymentIcon />,
+  path: '/payment'
+},
+{
+  label: 'Payment Categories',
+  icon: <PaymentIcon />,
+  path: '/paymentCategory'
+},
+{
+  label: 'Reviews',
+  icon: <ReviewIcon />,
+  path: '/review'
+}
+];
+
+const menuItemsShopAdmin = [{
+  label: 'Home',
+  icon: <HomeIcon />,
+  path: '/'
+},
+{
+  label: 'Shops',
+  icon: <ShopIcon />,
+  path: '/shop'
+},
+{
+  label: 'Products',
+  icon: <ShopIcon />,
+  path: '/product'
+},
+{
+  label: 'Carts',
+  icon: <CartIcon />,
+  path: '/cart'
+},
+{
+  label: 'Cart Product',
+  icon: <CartIcon />,
+  path: '/cartProduct'
+},
+{
+  label: 'Order',
+  icon: <CartIcon />,
+  path: '/orderCart'
+},
+{
+  label: 'Payments',
+  icon: <PaymentIcon />,
+  path: '/payment'
+},
+{
+  label: 'Reviews',
+  icon: <ReviewIcon />,
+  path: '/review'
+}
+];
+
+const menuItemsCustomer = [{
+  label: 'Home',
+  icon: <HomeIcon />,
+  path: '/'
+},
+{
+  label: 'Carts',
+  icon: <CartIcon />,
+  path: '/cart'
+},
+{
+  label: 'Cart Product',
+  icon: <CartIcon />,
+  path: '/cartProduct'
+},
+{
+  label: 'Order',
+  icon: <CartIcon />,
+  path: '/orderCart'
+},
+{
+  label: 'Payments',
+  icon: <PaymentIcon />,
+  path: '/payment'
+},
+{
+  label: 'Reviews',
+  icon: <ReviewIcon />,
+  path: '/review'
+}
 ];
 
 function LeftBar() {
+
+  const [userName, setUserName] = useState('');
+  const [role, setRole] = useState('');
+
+  const handleUserChange = (newUserName) => {
+    setUserName(newUserName);
+  };
+
+  const handleRoleChange = (newRole) => {
+    setRole(newRole);
+  };
+
+  // Load user data on app startup
+  useEffect(() => {
+    setUserName(UserService.getUsername());
+    setRole(UserService.getRole());
+  }, []);
+
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
@@ -100,14 +208,36 @@ function LeftBar() {
         <MenuIcon />
       </IconButton>
       <Drawer anchor="left" open={open} onClose={() => setOpen(false)}>
-        <List>
-          {menuItems.map((item) => (
-            <ListItem button key={item.label} onClick={() => handleItemClick(item.path)}>
-              <ListItemIcon>{item.icon}</ListItemIcon>
-              <ListItemText primary={item.label} />
-            </ListItem>
-          ))}
-        </List>
+        {role === "SuperAdmin" && (
+          <List>
+            {menuItemsSuperAdmin.map((item) => (
+              <ListItem button key={item.label} onClick={() => handleItemClick(item.path)}>
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemText primary={item.label} />
+              </ListItem>
+            ))}
+          </List>
+        )}
+        {role === "ShopAdmin" && (
+          <List>
+            {menuItemsShopAdmin.map((item) => (
+              <ListItem button key={item.label} onClick={() => handleItemClick(item.path)}>
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemText primary={item.label} />
+              </ListItem>
+            ))}
+          </List>
+        )}
+        {role === "Customer" && (
+          <List>
+            {menuItemsCustomer.map((item) => (
+              <ListItem button key={item.label} onClick={() => handleItemClick(item.path)}>
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemText primary={item.label} />
+              </ListItem>
+            ))}
+          </List>
+        )}
         <Divider />
       </Drawer>
     </>
